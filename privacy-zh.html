@@ -29,9 +29,9 @@
 
         <div class="section">
             <h2>概述</h2>
-            <p>PocketClaw 是一款 iOS 远程控制应用，用于管理运行在您个人电脑上的 OpenClaw 智能助手。我们非常重视您的隐私。本隐私政策说明了 PocketClaw 如何收集、使用和保护您的信息。
+            <p>PocketClaw 是一款 iOS 遥控器应用，用于远程管理运行在您个人电脑上的 OpenClaw 框架。我们非常重视您的隐私。本隐私政策说明了 PocketClaw 如何收集、使用和保护您的信息。
 
-特别说明：本应用不对公众提供生成式 AI 服务，不托管模型推理服务。所有智能能力均由用户自有设备实例提供。</p>
+特别说明：本应用不对公众提供生成式 AI 服务，不托管模型推理服务。所有智能能力均由用户自有设备实例提供。PocketClaw 是 OpenClaw 框架的官方配套应用，由同一开发团队开发。</p>
         </div>
 
         <div class="section">
@@ -39,7 +39,7 @@
             <p>PocketClaw 仅在您的本地设备上存储以下数据：
 
 • 节点连接信息（主机地址、端口、节点名称）— 存储在 UserDefaults
-• 认证令牌 — 安全存储在 iOS 钥匙串（Keychain）
+• 认证令牌（Token）— 存储在 App Group 共享存储（UserDefaults App Group），供主应用和 Widget 扩展共同访问
 • 任务执行历史（最近 50 条记录）— 存储在应用沙盒文件（Application Support）
 • 用户偏好设置 — 存储在 UserDefaults
 
@@ -76,7 +76,7 @@
 
         <div class="section">
             <h2>6. 数据安全</h2>
-            <p>• 认证令牌使用 iOS Keychain 硬件加密安全存储
+            <p>• 认证令牌存储在 App Group 共享存储中，受 iOS 数据保护机制保障
 • 远程通信通过 HTTPS（Cloudflare Tunnel）加密
 • 敏感操作（如重启服务、重置会话）需要用户手动确认
 • App 不收集设备标识符（IDFA/IDFV）</p>
@@ -84,7 +84,7 @@
 
         <div class="section">
             <h2>7. 数据删除</h2>
-            <p>您可以随时在设置 → 节点管理中删除已保存的节点信息。卸载 App 后，沙盒数据将被删除；Keychain 凭证可能会按 iOS 策略保留，可在重置设备内容时完全清除。</p>
+            <p>您可以随时在设置 → 节点管理中删除已保存的节点信息。卸载 App 后，所有沙盒数据和 App Group 数据（包括存储的 Token）将被系统自动删除。</p>
         </div>
 
         <div class="section">

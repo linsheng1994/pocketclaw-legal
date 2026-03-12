@@ -29,9 +29,9 @@
 
         <div class="section">
             <h2>Overview</h2>
-            <p>PocketClaw is an iOS remote control app for managing the OpenClaw intelligent assistant running on your personal computer. We take your privacy very seriously. This Privacy Policy explains how PocketClaw collects, uses, and protects your information.
+            <p>PocketClaw is an iOS remote control app for managing the OpenClaw framework running on your personal computer. We take your privacy very seriously. This Privacy Policy explains how PocketClaw collects, uses, and protects your information.
 
-Special note: This app does not provide generative AI services to the public, does not host model inference services. All intelligent capabilities are provided by user-owned device instances.</p>
+Special note: This app does not provide generative AI services to the public, does not host model inference services. All intelligent capabilities are provided by user-owned device instances. PocketClaw is the official companion app for the OpenClaw framework, developed by the same team.</p>
         </div>
 
         <div class="section">
@@ -39,7 +39,7 @@ Special note: This app does not provide generative AI services to the public, do
             <p>PocketClaw only stores the following data on your local device:
 
 • Node connection info (host address, port, node name) — stored in UserDefaults
-• Authentication token — securely stored in iOS Keychain
+• Authentication token — stored in App Group shared storage (UserDefaults with App Group suite), accessible by the app and its Widget extension
 • Task execution history (last 50 records) — stored in app sandbox files (Application Support)
 • User preferences — stored in UserDefaults
 
@@ -76,7 +76,7 @@ In LAN direct-connect scenarios, iOS may prompt for "Local Network" permission; 
 
         <div class="section">
             <h2>6. Data Security</h2>
-            <p>• Authentication tokens are securely stored using iOS Keychain with hardware encryption
+            <p>• Authentication tokens are stored in App Group shared storage with iOS data protection
 • Remote communication is encrypted via HTTPS (Cloudflare Tunnel)
 • Sensitive operations (e.g., restart service, reset session) require manual user confirmation
 • The App does not collect device identifiers (IDFA/IDFV)</p>
@@ -84,7 +84,7 @@ In LAN direct-connect scenarios, iOS may prompt for "Local Network" permission; 
 
         <div class="section">
             <h2>7. Data Deletion</h2>
-            <p>You can delete saved node information at any time in Settings → Node Management. After uninstalling the App, sandbox data will be deleted; Keychain credentials may be retained by the system per iOS policy and can be completely removed when resetting device content.</p>
+            <p>You can delete saved node information at any time in Settings → Node Management. After uninstalling the App, all sandbox data and App Group data (including stored tokens) will be automatically deleted by the system.</p>
         </div>
 
         <div class="section">
