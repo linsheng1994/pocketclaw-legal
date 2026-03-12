@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketClaw - Privacy Policy</title>
+    <style>
+        :root { --bg: #0d1117; --card: #161b22; --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff; --border: #30363d; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 24px; }
+        .container { max-width: 720px; margin: 0 auto; }
+        h1 { font-size: 28px; margin-bottom: 8px; }
+        .updated { color: var(--muted); font-size: 13px; margin-bottom: 32px; }
+        .section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+        .section h2 { font-size: 17px; margin-bottom: 10px; color: var(--accent); }
+        .section p { font-size: 14px; color: var(--muted); white-space: pre-line; }
+        .nav { margin-top: 32px; text-align: center; }
+        .nav a { color: var(--accent); text-decoration: none; font-size: 14px; }
+        .nav a:hover { text-decoration: underline; }
+        .lang-switch { text-align: right; margin-bottom: 16px; }
+        .lang-switch a { color: var(--accent); text-decoration: none; font-size: 13px; padding: 4px 12px; border: 1px solid var(--border); border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switch"><a href="privacy-zh.html">🇨🇳 中文版</a></div>
+        <h1>🔒 Privacy Policy</h1>
+        <p class="updated">Last updated: March 12, 2026</p>
+
+        <div class="section">
+            <h2>Overview</h2>
+            <p>PocketClaw is an iOS remote control app for managing the OpenClaw intelligent assistant running on your personal computer. We take your privacy very seriously. This Privacy Policy explains how PocketClaw collects, uses, and protects your information.
+
+Special note: This app does not provide generative AI services to the public, does not host model inference services. All intelligent capabilities are provided by user-owned device instances.</p>
+        </div>
+
+        <div class="section">
+            <h2>1. Data Collection & Storage</h2>
+            <p>PocketClaw only stores the following data on your local device:
+
+• Node connection info (host address, port, node name) — stored in UserDefaults
+• Authentication token — securely stored in iOS Keychain
+• Task execution history (last 50 records) — stored in app sandbox files (Application Support)
+• User preferences — stored in UserDefaults
+
+All data is stored only on your iPhone locally and will not be uploaded to any cloud server.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. Network Communication</h2>
+            <p>PocketClaw communicates with the OpenClaw Gateway on your personal computer using the following methods:
+
+• Cloudflare Tunnel: Establishes an encrypted tunnel via Cloudflare infrastructure for remote access. Data is relayed through Cloudflare servers but encrypted with HTTPS.
+• LAN Direct: When Tunnel is unavailable, the App can connect to Gateway directly via local network (HTTP).
+
+All API requests carry Bearer Token authentication. All requests target your own OpenClaw Gateway exclusively. In Tunnel mode, network traffic is relayed through Cloudflare infrastructure. The developer does not operate any intermediate servers and does not receive user request content.
+
+In LAN direct-connect scenarios, iOS may prompt for "Local Network" permission; this permission is only used to connect to your authorized personal gateway device.</p>
+        </div>
+
+        <div class="section">
+            <h2>3. Camera Usage</h2>
+            <p>PocketClaw only requests camera permission when scanning the pairing QR code. Camera data is not recorded, stored, or transmitted. You can revoke camera permission at any time in iOS System Settings.</p>
+        </div>
+
+        <div class="section">
+            <h2>4. Notification Permission</h2>
+            <p>PocketClaw may request notification permission when you enable "Task Result Notifications". Notifications are used to alert you when tasks complete, fail, or need attention. Notification content is used solely for local reminders — never for advertising, profiling, or cross-app tracking. You can disable notification permission at any time in iOS System Settings.</p>
+        </div>
+
+        <div class="section">
+            <h2>5. Third-Party Services</h2>
+            <p>• Cloudflare: Used for Tunnel relay (established by cloudflared on the host). Cloudflare's privacy policy: https://www.cloudflare.com/privacypolicy/
+• PocketClaw does not integrate any analytics SDK, advertising SDK, or user tracking services.</p>
+        </div>
+
+        <div class="section">
+            <h2>6. Data Security</h2>
+            <p>• Authentication tokens are securely stored using iOS Keychain with hardware encryption
+• Remote communication is encrypted via HTTPS (Cloudflare Tunnel)
+• Sensitive operations (e.g., restart service, reset session) require manual user confirmation
+• The App does not collect device identifiers (IDFA/IDFV)</p>
+        </div>
+
+        <div class="section">
+            <h2>7. Data Deletion</h2>
+            <p>You can delete saved node information at any time in Settings → Node Management. After uninstalling the App, sandbox data will be deleted; Keychain credentials may be retained by the system per iOS policy and can be completely removed when resetting device content.</p>
+        </div>
+
+        <div class="section">
+            <h2>8. Children's Privacy</h2>
+            <p>PocketClaw is not intended for children under 13 and does not knowingly collect personal information from children.</p>
+        </div>
+
+        <div class="section">
+            <h2>9. Policy Updates</h2>
+            <p>We may update this Privacy Policy from time to time. Updated policies will be displayed within the App. Continued use of the App indicates your acceptance of the updated policy.</p>
+        </div>
+
+        <div class="section">
+            <h2>10. Contact Us</h2>
+            <p>If you have any privacy-related questions, please contact us:
+Email: lin757834215@gmail.com</p>
+        </div>
+
+        <div class="nav">
+            <a href="terms.html">Terms of Service</a> · <a href="index.html">Home</a>
+        </div>
+    </div>
+</body>
+</html>

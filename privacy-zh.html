@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketClaw - 隐私政策</title>
+    <style>
+        :root { --bg: #0d1117; --card: #161b22; --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff; --border: #30363d; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 24px; }
+        .container { max-width: 720px; margin: 0 auto; }
+        h1 { font-size: 28px; margin-bottom: 8px; }
+        .updated { color: var(--muted); font-size: 13px; margin-bottom: 32px; }
+        .section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+        .section h2 { font-size: 17px; margin-bottom: 10px; color: var(--accent); }
+        .section p { font-size: 14px; color: var(--muted); white-space: pre-line; }
+        .nav { margin-top: 32px; text-align: center; }
+        .nav a { color: var(--accent); text-decoration: none; font-size: 14px; }
+        .nav a:hover { text-decoration: underline; }
+        .lang-switch { text-align: right; margin-bottom: 16px; }
+        .lang-switch a { color: var(--accent); text-decoration: none; font-size: 13px; padding: 4px 12px; border: 1px solid var(--border); border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switch"><a href="privacy.html">🇺🇸 English</a></div>
+        <h1>🔒 隐私政策</h1>
+        <p class="updated">最后更新：2026 年 3 月 12 日</p>
+
+        <div class="section">
+            <h2>概述</h2>
+            <p>PocketClaw 是一款 iOS 远程控制应用，用于管理运行在您个人电脑上的 OpenClaw 智能助手。我们非常重视您的隐私。本隐私政策说明了 PocketClaw 如何收集、使用和保护您的信息。
+
+特别说明：本应用不对公众提供生成式 AI 服务，不托管模型推理服务。所有智能能力均由用户自有设备实例提供。</p>
+        </div>
+
+        <div class="section">
+            <h2>1. 数据收集与存储</h2>
+            <p>PocketClaw 仅在您的本地设备上存储以下数据：
+
+• 节点连接信息（主机地址、端口、节点名称）— 存储在 UserDefaults
+• 认证令牌 — 安全存储在 iOS 钥匙串（Keychain）
+• 任务执行历史（最近 50 条记录）— 存储在应用沙盒文件（Application Support）
+• 用户偏好设置 — 存储在 UserDefaults
+
+所有数据仅存储在您的 iPhone 本地，不会上传至任何云端服务器。</p>
+        </div>
+
+        <div class="section">
+            <h2>2. 网络通信</h2>
+            <p>PocketClaw 通过以下方式与您个人电脑上的 OpenClaw Gateway 通信：
+
+• Cloudflare Tunnel：通过 Cloudflare 基础设施建立加密隧道进行远程访问。数据经 Cloudflare 服务器中转，但全程以 HTTPS 加密。
+• 局域网直连：当 Tunnel 不可用时，App 可通过本地网络（HTTP）直接连接 Gateway。
+
+所有 API 请求均携带 Bearer Token 认证。所有请求仅指向您自己的 OpenClaw Gateway。在 Tunnel 模式下，网络流量经 Cloudflare 基础设施中转。开发者不运营任何中间服务器，不接收用户请求内容。
+
+在局域网直连场景中，iOS 可能会提示"本地网络"权限；此权限仅用于连接您已授权的个人网关设备。</p>
+        </div>
+
+        <div class="section">
+            <h2>3. 摄像头使用</h2>
+            <p>PocketClaw 仅在扫描配对二维码时请求摄像头权限。摄像头数据不会被录制、存储或传输。您可以随时在 iOS 系统设置中撤销摄像头权限。</p>
+        </div>
+
+        <div class="section">
+            <h2>4. 通知权限</h2>
+            <p>当您开启"任务结果通知"时，PocketClaw 可能会请求通知权限。通知用于在任务完成、失败或需要注意时提醒您。通知内容仅用于本地提醒，绝不用于广告、用户画像或跨应用追踪。您可以随时在 iOS 系统设置中关闭通知权限。</p>
+        </div>
+
+        <div class="section">
+            <h2>5. 第三方服务</h2>
+            <p>• Cloudflare：用于 Tunnel 中继（由宿主机上的 cloudflared 建立）。Cloudflare 隐私政策：https://www.cloudflare.com/privacypolicy/
+• PocketClaw 未集成任何分析 SDK、广告 SDK 或用户追踪服务。</p>
+        </div>
+
+        <div class="section">
+            <h2>6. 数据安全</h2>
+            <p>• 认证令牌使用 iOS Keychain 硬件加密安全存储
+• 远程通信通过 HTTPS（Cloudflare Tunnel）加密
+• 敏感操作（如重启服务、重置会话）需要用户手动确认
+• App 不收集设备标识符（IDFA/IDFV）</p>
+        </div>
+
+        <div class="section">
+            <h2>7. 数据删除</h2>
+            <p>您可以随时在设置 → 节点管理中删除已保存的节点信息。卸载 App 后，沙盒数据将被删除；Keychain 凭证可能会按 iOS 策略保留，可在重置设备内容时完全清除。</p>
+        </div>
+
+        <div class="section">
+            <h2>8. 儿童隐私</h2>
+            <p>PocketClaw 不面向 13 岁以下的儿童，也不会故意收集儿童的个人信息。</p>
+        </div>
+
+        <div class="section">
+            <h2>9. 政策更新</h2>
+            <p>我们可能会不时更新本隐私政策。更新后的政策将在 App 内显示。继续使用 App 即表示您接受更新后的政策。</p>
+        </div>
+
+        <div class="section">
+            <h2>10. 联系我们</h2>
+            <p>如果您有任何隐私相关的问题，请联系我们：
+邮箱：lin757834215@gmail.com</p>
+        </div>
+
+        <div class="nav">
+            <a href="terms-zh.html">用户协议</a> · <a href="index.html">首页</a>
+        </div>
+    </div>
+</body>
+</html>
