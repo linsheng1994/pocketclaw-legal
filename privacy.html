@@ -16,7 +16,6 @@
         .section p { font-size: 14px; color: var(--muted); white-space: pre-line; }
         .nav { margin-top: 32px; text-align: center; }
         .nav a { color: var(--accent); text-decoration: none; font-size: 14px; }
-        .nav a:hover { text-decoration: underline; }
         .lang-switch { text-align: right; margin-bottom: 16px; }
         .lang-switch a { color: var(--accent); text-decoration: none; font-size: 13px; padding: 4px 12px; border: 1px solid var(--border); border-radius: 6px; }
     </style>
@@ -45,17 +44,17 @@ This app does not provide VPN, proxy, or network acceleration services, and does
 • Task execution history (last 50 records) — stored in app sandbox files (Application Support)
 • User preferences — stored in UserDefaults
 
-All data is stored only on your iPhone locally and will not be uploaded to any cloud server.</p>
+The developer does not operate or host any user data servers. Network requests may be relayed through Cloudflare infrastructure; the developer does not receive or store task content.</p>
         </div>
 
         <div class="section">
             <h2>2. Network Communication</h2>
             <p>PocketClaw communicates with the OpenClaw Gateway on your personal computer using the following methods:
 
-• Cloudflare Tunnel: Establishes an encrypted tunnel via Cloudflare infrastructure for remote access. Data is relayed through Cloudflare servers but encrypted with HTTPS.
-• LAN Direct: When Tunnel is unavailable, the App can connect to Gateway directly via local network (HTTP).
+• Cloudflare Tunnel: Establishes an encrypted tunnel via Cloudflare infrastructure for remote access. Data is relayed through Cloudflare servers but encrypted with HTTPS. When using Cloudflare Tunnel, encrypted data may transit through Cloudflare nodes located outside your country. Cloudflare processes transit data per its privacy policy; the developer does not access or retain transmission content.
+• LAN Direct: When Tunnel is unavailable, the App can connect to Gateway directly via local network (HTTP). LAN direct connection is intended only for trusted local network environments; all public network access uses HTTPS Tunnel.
 
-All API requests carry Bearer Token authentication. All requests target your own OpenClaw Gateway exclusively. In Tunnel mode, network traffic is relayed through Cloudflare infrastructure. The developer does not operate any intermediate servers and does not receive user request content.
+All API requests carry Bearer Token authentication. All requests target your own OpenClaw Gateway exclusively. The developer does not operate any intermediate servers and does not receive user request content.
 
 In LAN direct-connect scenarios, iOS may prompt for "Local Network" permission; this permission is only used to connect to your authorized personal gateway device.</p>
         </div>
@@ -85,8 +84,10 @@ In LAN direct-connect scenarios, iOS may prompt for "Local Network" permission; 
         </div>
 
         <div class="section">
-            <h2>7. Data Deletion</h2>
-            <p>You can delete saved node information at any time in Settings → Node Management. After uninstalling the App, all sandbox data and App Group data (including stored tokens) will be automatically deleted by the system.</p>
+            <h2>7. Data Deletion & Your Rights</h2>
+            <p>You can delete saved node information at any time in Settings → Node Management. After uninstalling the App, all sandbox data and App Group data (including stored tokens) will be automatically deleted by the system.
+
+You have the right to access, correct, or delete your personal data. To exercise these rights, please contact us using the information provided below.</p>
         </div>
 
         <div class="section">
